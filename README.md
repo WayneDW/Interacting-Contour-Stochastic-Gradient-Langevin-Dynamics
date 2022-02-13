@@ -66,7 +66,7 @@ $ python3 main.py -c csgld -precondition 1 -lr 3e-7 -T 0.3 -part 200 -div 10 -sz
 
 Folder: **resnet100_cifar100**.
 
-How to train CIFAR100 using ResNet20 (use -depth X for ResNetXX models and -model wrn -depth 0 for WRN models):
+How to train baseline algorithms on CIFAR100 using ResNet20:
 
 m-SGDxP4 (a low temperature version of SGHMC)
 ```python
