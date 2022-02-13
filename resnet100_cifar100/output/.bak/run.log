@@ -1,0 +1,9 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) xalt/1.1.2
+
+The following have been reloaded with a version change:
+  1) cuda/9.0.176 => cuda/10.0.130
+
+slurmstepd: error: *** JOB 151699 ON gilbreth-d005 CANCELLED AT 2021-01-28T09:54:51 ***

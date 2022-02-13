@@ -26,7 +26,7 @@ Please check the **notebook (ipynb)** files for the ICSGLD algorithm and the bas
 
 ## Deep Contextual Bandits on Mushroom tasks
 
-Move to the folder: **contextual_bandits**.
+Folder: **contextual_bandits**.
 
 All the algorithms run 2,000 epochs based on 4 parallel chains.
 
@@ -58,4 +58,49 @@ $ python3 main.py -c sgld -precondition 1 -lr 3e-7 -T 0.3
 
 ```python
 $ python3 main.py -c csgld -precondition 1 -lr 3e-7 -T 0.3 -part 200 -div 10 -sz 0.03 -zeta 20
+```
+
+
+
+## Uncertainty Estimation via Image Data
+
+Folder: **resnet100_cifar100**.
+
+How to train CIFAR100 using ResNet20 (use -depth X for ResNetXX models and -model wrn -depth 0 for WRN models):
+
+m-SGDxP4 (a low temperature version of SGHMC)
+```python
+$ python3 bayes_cnn.py -sn 500 -model resnet -depth 20 -c sghmc -T 1e-10 -period 0 -warm 0.85 -burn 0.98
+```
+
+Replica exchange method xP4
+```python
+$ python3 bayes_cnn.py -sn 500 -model resnet -depth 20 -c replica -correction 4000 -warm 0.8 -burn 0.8
+```
+
+cycSGHMC & cycSWAG xT4
+```python
+$ python3 bayes_cnn.py -sn 2000 -chains 1 -model resnet -depth 20 -c cswag -period 0 -cycle 10 -warm 0.94 -burn 0.94
+```
+
+**ICSGHMCxP4**
+
+ResNet20 
+```python
+$ python3 bayes_cnn.py -sn 500 -model resnet -depth 20 -c csghmc -stepsize 0.003 -zeta 3e6 -part 200 -div 200 -bias 2e4 -warm 0.75 -burn 0.80
+```
+
+ResNet32
+```python
+$ python3 bayes_cnn.py -sn 500 -model resnet -depth 32 -c csghmc -stepsize 0.003 -zeta 3e6 -part 200 -div 200 -bias 2e4 -warm 0.75 -burn 0.80
+```
+
+ResNet56
+```python
+$ python3 bayes_cnn.py -sn 500 -model resnet -depth 56 -c csghmc -stepsize 0.003 -zeta 3e6 -part 200 -div 200 -bias 1e4 -warm 0.75 -burn 0.80
+```
+
+WRN-16-8
+```python
+$ python3 bayes_cnn.py -sn 500 -model wrn -depth 0 -c csghmc -stepsize 0.003 -zeta 3e6 -part 200 -div 60 -bias 0 -warm 0.8 -burn 0.80
 ```
