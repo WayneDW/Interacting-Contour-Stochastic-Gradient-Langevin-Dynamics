@@ -1,5 +1,5 @@
 # Interacting-Contour-Stochastic-Gradient-Langevin-Dynamics
-An embarrassingly parallel dynamic importance sampler (contour stochastic gradient Langevin dynamics [\[Link\]](https://arxiv.org/pdf/2010.09800.pdf)) with efficient interactions, where the interacting parallel version [\[Link\]](https://openreview.net/pdf?id=IK9ap6nxXr2) can be theoretically more efficient than a single-chain CSGLD [\[Link\]](https://arxiv.org/pdf/2010.09800.pdf) with an equivalent computational budget.
+An embarrassingly parallel dynamic importance sampler with efficient interactions, where the interacting parallel version [\[Link\]](https://openreview.net/pdf?id=IK9ap6nxXr2) can be theoretically more efficient than a single-chain CSGLD [\[Link\]](https://arxiv.org/pdf/2010.09800.pdf) with an equivalent computational budget.
 
 
 ```
