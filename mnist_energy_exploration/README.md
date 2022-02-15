@@ -14,15 +14,15 @@ This code is only conducted based on a single chain to show how the interacting 
 
 SGD
 ```python
-$ python3 bayes_cnn.py -div 300 -sn 500 -lr 1e-6 -classes 5 -zeta 0 -T 0
+$ python3 bayes_cnn.py -sn 500 -lr 1e-6 -classes 5 -zeta 0 -T 0
 ```
 
 SGLD
 ```python
-$ python3 bayes_cnn.py -div 300 -sn 500 -lr 1e-6 -classes 5 -zeta 0 -T 0.1
+$ python3 bayes_cnn.py -sn 500 -lr 1e-6 -classes 5 -zeta 0 -T 0.1
 ```
 
-ICSGLD
+ICSGLD or CSGLD based on the novel random field function
 ```python
-$ python3 bayes_cnn.py -div 300 -sn 500 -lr 1e-6 -classes 5 -zeta 3e4 -T 0.1
+$ python3 bayes_cnn.py -sn 500 -lr 1e-6 -classes 5 -zeta 3e4 -T 0.1
 ```
