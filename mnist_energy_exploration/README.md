@@ -12,6 +12,8 @@
 
 This code is only conducted based on a single chain to show how the interacting random field function outperforms the vanilla alternatives.
 
+You can see (I)CGLD yields volatile losses, which implies remarkable mode explorations.
+
 SGD
 ```python
 $ python3 bayes_cnn.py -sn 500 -lr 1e-6 -classes 5 -zeta 0 -T 0
