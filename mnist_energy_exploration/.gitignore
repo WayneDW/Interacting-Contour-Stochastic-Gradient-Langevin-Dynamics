@@ -1,0 +1,7 @@
+data
+output/test_snapshot/
+run_gpu_bma_tune.sub
+run_gpu_bma_tune_new.sub
+run_gpu_bma_tune_new_long.sub
+nohup.out
+saved_models
