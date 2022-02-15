@@ -50,7 +50,6 @@ def main():
     parser.add_argument('-div', default=10, type=float, help='Divide energy: divisor to calculate partition index')
     parser.add_argument('-zeta', default=1e5, type=float, help='Adaptive amplifier')
     parser.add_argument('-T', default=1.0, type=float, help='Tempreture')
-    parser.add_argument('-ifprint', default=0, type=float, help='if print subprocess')
 
     # other settings
     parser.add_argument('-seed', default=random.randint(1, 1e6), type=int, help='Random Seed')
