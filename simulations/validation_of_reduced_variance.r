@@ -1,7 +1,6 @@
 library(scales)
 
 # set your folder
-#setwd("//Users//wayne//Desktop//ICSGLD Simulation//output//")
 setwd("//Users//wayne//Documents//My research//0. Pop CSGLD//")
 
 
