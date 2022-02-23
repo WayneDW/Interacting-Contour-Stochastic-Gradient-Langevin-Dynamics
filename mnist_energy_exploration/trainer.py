@@ -50,15 +50,14 @@ def sgmcmc(net, train_loader, test_loader, pars):
             images, labels = images[filters], labels[filters]
             net.train()
             sampler.net.zero_grad()
+            """ change mean loss to sum loss to adapt to Bayesian settings """
             loss = criterion(sampler.net(images), labels) * pars.classes * 6000
             loss.backward()
             import_w = sampler.cstep(images, labels, pars.stepsize, loss.item())
             print('Epoch {} Iter {} subLoss {:0.1f} gradient multilier {:.2f} importance weight {:.2f}'.format(epoch, i, loss, sampler.gmul, sampler.import_weight))
+
         """ apply weight 1 using SGHMC and importance weights using Contour SGHMC """
-        if (pars.c in ['sghmc', 'csghmc'] and epoch >= 0.5 * pars.sn) and pars.classes != 2:
-            BMA.eval(net, train_loader, test_loader, criterion, pars.classes, weight=import_w, bma=True)
-        else:
-            BMA.eval(net, train_loader, test_loader, criterion, pars.classes, weight=import_w, bma=False)
+        BMA.eval(net, train_loader, test_loader, criterion, pars.classes, weight=import_w, bma=False)
 
         pdfEnergy = sampler.G.cpu().numpy()
         print('Epoch {} Acc: {:0.2f} BMA: {:0.2f} lr: {:.2E} T: {:.2E}  Weight {:.3f} gradient multilier {:.2f} Pidx {} train Loss: {:0.1f} test Loss: {:0.1f}'.format(\
