@@ -11,6 +11,12 @@ An embarrassingly parallel dynamic importance sampler with efficient interaction
 }
 ```
 
+The first sampling algorithm that efficiently explores the energy landscape in deep learning via a fixed learning rate.
+
+<p float="left">
+  <img src="ICSGLD_losses_path.gif.gif" width="200" title="SGLD"/>
+</p>
+
 
 
 ### Requirement
