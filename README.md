@@ -13,6 +13,8 @@ An embarrassingly parallel dynamic importance sampler with efficient interaction
 
 The **first** sampling algorithm that efficiently explores deep energy landscapes via a fixed learning rate.
 
+This is a simple MNIST dataset, but so far no algorithms can freely explore multiple modes using a fixed learning rate.
+
 <p float="left">
   <img src="./figures/ICSGLD_losses_path.gif" width="200" title="SGLD"/>
   <img src="./figures/SGD_SGLD_CSGLD.png" width="600" title="SGLD"/>
