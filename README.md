@@ -29,3 +29,4 @@ This is a simple MNIST dataset, but so far the existing algorithms cannot even f
 * numpy
 * CUDA
 
+
